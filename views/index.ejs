@@ -49,42 +49,64 @@
           <th width="150">Student Image</th>
           <th width="100">DOB</th>
           <th width="100">Contact</th>
+          <th width="50">Edit</th>
+          <th width="50">Delete</th>
         </tr>
       </thead>
-
+      
       <tbody>
-
+        
         <% for(let i = 0; i < students.length; i++) { %>
+          
+          <tr>
+            
+            <td>
+              
+              <a href="/student/<%= students[i].studentId %>">
+                <%= students[i].name %>
+              </a>
+            
+            </td>
 
-        <tr>
+            <td>
+  
+              <img src="images/<%= students[i].image %>" width="20%">
 
-          <td>
-            <a href="/student/<%= students[i].studentId %>">
-              <%= students[i].name %>
-            </a>
-          </td>
-
-          <td>
-            <img src="images/<%= students[i].image %>" width="20%">
-          </td>
-
-          <td>
-            <%= new Date(students[i].dob).toLocaleDateString('en-US', {
-                  month: 'short',
-                  day: '2-digit',
-                  year: 'numeric'
-                }) %>
-          </td>
-
-          <td>
-            <%= students[i].contact %>
-          </td>
-
-        </tr>
-
-        <% } %>
-
-      </tbody>
+            </td>
+            
+            <td>
+              
+              <%= new Date(students[i].dob).toLocaleDateString('en-US', {
+                month: 'short',
+                day: '2-digit',
+                year: 'numeric'
+              }) %>
+            
+            </td>
+            
+            <td>
+              <%= students[i].contact %>
+            </td>
+            
+            <!-- Edit Link -->
+             <td>
+              <a href="/editStudent/<%= students[i].studentId %>">
+                Edit
+              </a>
+            </td>
+            
+            <!-- Delete Link -->
+             <td>
+              <a href="/deleteStudent/<%= students[i].studentId %>" onclick="return confirm('Are you sure you want to delete this student?')">
+                Delete
+              </a>
+            </td>
+          
+          </tr>
+          
+          <% } %>
+        
+        </tbody>
 
     </table>
 

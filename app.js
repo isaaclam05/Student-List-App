@@ -225,10 +225,10 @@ app.get('/deleteStudent/:id', (req, res) => {
 // ==============================
 // Start Server
 // ==============================
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 
 app.listen(PORT, () => {
 
-    console.log(`Server started at http://localhost:3001/`);
+    console.log(`Server started at http://localhost:3002/`);
 
 });
