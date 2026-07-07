@@ -41,9 +41,9 @@ COLLATE=utf8mb4_general_ci;
 INSERT INTO `students`
 (`studentId`, `name`, `dob`, `contact`, `image`)
 VALUES
-(1, 'John Edward', '2007-05-08', '98765432', 'https://plus.unsplash.com/premium_photo-1679440414935-855a10bb95a8?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'),
-(2, 'Marv Thomson', '2006-02-06', '98765678', 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'),
-(3, 'Benny Teo', '2006-08-18', '98789879', 'https://plus.unsplash.com/premium_photo-1678197937465-bdbc4ed95815?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+(1, 'John Edward', '2007-05-08', '98765432', 'john_edward.jpg'),
+(2, 'Marv Thomson', '2006-02-06', '98765678', 'marv_thomson.jpg'),
+(3, 'Benny Teo', '2006-08-18', '98789879', 'benny_teo.jpg');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
