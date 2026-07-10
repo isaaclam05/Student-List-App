@@ -48,7 +48,7 @@
 
             <div class="card-body">
 
-              <form action="/editStudent/<%= student.studentId %>" method="POST">
+              <form action="/editStudent/<%= student.studentId %>" method="POST" enctype="multipart/form-data">
 
                 <div class="mb-3">
                   <label for="name" class="form-label">
@@ -92,19 +92,47 @@
                     required>
                 </div>
 
-                <div class="mb-3">
-                  <label class="form-label">
+                <!-- Current Image -->
+                 <div class="mb-3">
+                  <label class="form-label fw-bold">
                     Current Image
                   </label>
+                  
+                  <div class="text-center mb-3">
+                    <% if (student.image) { %>
+                      <img
+                      src="/images/<%= student.image %>"
+                      alt="<%= student.name %>"           
+                      class="img-fluid rounded border shadow-sm"
+                      style="max-width:200px; max-height:200px; object-fit:cover;">
+                      <% } else { %>     
+                        <div class="border rounded p-4 text-muted">             
+                          No image available          
+                        </div>     
+                        <% } %> 
+                      </div>
+                    </div>
 
-                  <div class="text-center">
-                    <img
-                      src="images/<%= student.image %>"
-                      alt="<%= student.name %>"
-                      class="img-fluid rounded border"
-                      style="max-height: 200px;">
-                  </div>
-                </div>
+                    <!-- Upload New Image -->
+                     <div class="mb-3">
+                      <label for="image" class="form-label fw-bold">    
+                        Upload New Image
+                      </label>
+  
+                      <input
+                      type="file"
+                      class="form-control"
+                      id="image"
+                      name="image"
+                      accept="image/*">
+
+  
+                      <!-- Keep existing image if user doesn't upload a new one -->
+                      <input
+                      type="hidden"
+                      name="currentImage"
+                      value="<%= student.image %>">
+                    </div>
 
                 <div class="d-grid gap-2">
 
